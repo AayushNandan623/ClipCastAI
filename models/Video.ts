@@ -1,4 +1,3 @@
-import { timeStamp } from "console";
 import mongoose, { Schema, model, models } from "mongoose";
 
 export const VIDEO_DIMENSTIONS = {
