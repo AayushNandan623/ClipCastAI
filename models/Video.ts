@@ -1,7 +1,6 @@
-import { timeStamp } from "console";
 import mongoose, { Schema, model, models } from "mongoose";
 
-export const VIDEO_DIMENSTIONS = {
+export const VIDEO_DIMENSIONS = {
   width: 1080,
   height: 1920,
 } as const;
@@ -28,8 +27,8 @@ const videoSchema = new Schema<IVideo>(
     thumbnailUrl: { type: String, required: true },
     controls: { types: Boolean, default: true },
     transformation: {
-      height: { type: Number, default: VIDEO_DIMENSTIONS.height },
-      width: { type: Number, default: VIDEO_DIMENSTIONS.width },
+      height: { type: Number, default: VIDEO_DIMENSIONS.height },
+      width: { type: Number, default: VIDEO_DIMENSIONS.width },
       quality: { type: Number, min: 1, max: 100 },
     },
   },
@@ -38,4 +37,4 @@ const videoSchema = new Schema<IVideo>(
 
 const Video = models?.Video || model<IVideo>("Video", videoSchema);
 
-export default Video; 
+export default Video;
